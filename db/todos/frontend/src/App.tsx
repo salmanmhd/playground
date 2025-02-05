@@ -1,30 +1,32 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import TodoItem from './TodoItem';
 
-const todoList = [
-  {
-    id: 1,
-    title: 'todo one',
-    description: 'thisis description',
-    completed: false,
-  },
-  {
-    id: 1,
-    title: 'todo one',
-    description: 'thisis description',
-    completed: false,
-  },
-  {
-    id: 1,
-    title: 'todo one',
-    description: 'thisis description',
-    completed: false,
-  },
-];
+// const todoList = [
+//   {
+//     id: 1,
+//     title: 'todo one',
+//     description: 'thisis description',
+//     completed: false,
+//   },
+//   {
+//     id: 1,
+//     title: 'todo one',
+//     description: 'thisis description',
+//     completed: false,
+//   },
+//   {
+//     id: 1,
+//     title: 'todo one',
+//     description: 'thisis description',
+//     completed: false,
+//   },
+// ];
 const TodoApp = () => {
-  const [todos, setTodos] = useState(todoList);
+  const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const BASE_URL = import.meta.env.VITE_BASE_URL;
+  console.log(BASE_URL);
 
   const handleAddTodo = () => {
     if (title.trim()) {
@@ -39,6 +41,16 @@ const TodoApp = () => {
       setDescription('');
     }
   };
+
+  useEffect(() => {
+    async function fetchTodos() {
+      const res = await fetch(`${BASE_URL}/todo/6`);
+      const data = await res.json();
+      console.log(data);
+    }
+
+    fetchTodos();
+  }, []);
 
   return (
     <div className='max-w-md mx-auto mt-10 drop-shadow-2xl p-6 bg-gray-900 rounded-lg'>
