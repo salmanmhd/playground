@@ -6,19 +6,24 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
+import { Button } from './components/ui/button';
 
 function Profile() {
   return (
-    <Card className='w-96'>
+    <Card className='w-[180px]'>
       <CardHeader>
-        <CardTitle>Card Title</CardTitle>
-        <CardDescription>Card Description</CardDescription>
+        <CardTitle>Profile</CardTitle>
+        <CardDescription>Update your profile</CardDescription>
       </CardHeader>
       <CardContent>
         <p>Card Content</p>
+        <p>Card Content</p>
+        <p>Card Content</p>
+        <p>Card Content</p>
+        <p className='text-sm text-muted-foreground'>Card Content</p>
       </CardContent>
       <CardFooter>
-        <p>Card Footer</p>
+        <Button className='w-full'>Update</Button>
       </CardFooter>
     </Card>
   );
