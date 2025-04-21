@@ -1,0 +1,101 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+  todos: [
+    {
+      id: "1",
+      title: "Complete React Assignment",
+      description: "Finish the task tracker project using hooks and context.",
+      list: "Work",
+      priority: "High",
+      date: "2025-04-21",
+      tags: ["react", "hooks", "project"],
+      isCompleted: false,
+      subtask: [
+        { id: "1-1", title: "Setup folder structure", isCompleted: true },
+        { id: "1-1", title: "Setup folder structure", isCompleted: true },
+        { id: "1-2", title: "Implement Context API", isCompleted: false },
+      ],
+    },
+    {
+      id: "2",
+      title: "Buy Groceries",
+      description: "Milk, eggs, bread, and vegetables.",
+      list: "Personal",
+      priority: "Medium",
+      date: "2025-04-22",
+      tags: ["shopping", "errands"],
+      isCompleted: false,
+      subtask: [
+        { id: "2-1", title: "Check pantry", isCompleted: false },
+        { id: "2-2", title: "Make a grocery list", isCompleted: false },
+      ],
+    },
+    {
+      id: "3",
+      title: "Read JavaScript Book",
+      description: "Go through closures and async/await chapters.",
+      list: "Learning",
+      priority: "Low",
+      date: "2025-04-25",
+      tags: ["javascript", "study"],
+      isCompleted: false,
+      subtask: [
+        { id: "3-1", title: "Read closure chapter", isCompleted: false },
+        { id: "3-2", title: "Try examples on async", isCompleted: false },
+      ],
+    },
+    {
+      id: "4",
+      title: "Workout Session",
+      description: "Leg day at the gym, don't skip squats.",
+      list: "Health",
+      priority: "High",
+      date: "2025-04-21",
+      tags: ["fitness", "routine"],
+      isCompleted: true,
+      subtask: [
+        { id: "4-1", title: "Warm-up", isCompleted: false },
+        { id: "4-2", title: "Squats and lunges", isCompleted: false },
+      ],
+    },
+    {
+      id: "5",
+      title: "Call Bank",
+      description: "Resolve transaction issue and ask about credit card offer.",
+      list: "Urgent",
+      priority: "Urgent",
+      date: "2025-04-20",
+      tags: ["banking", "finance"],
+      isCompleted: true,
+      subtask: [
+        { id: "5-1", title: "Note issue ID", isCompleted: false },
+        { id: "5-2", title: "Call customer service", isCompleted: false },
+      ],
+    },
+  ],
+};
+
+const todoSlice = createSlice({
+  name: "todoSlice",
+  initialState,
+  reducers: {
+    addTodo(state, action) {
+      state.todos.push(action.payload);
+    },
+    deleteTodo(state, action) {
+      state.todos = state.todos.filter((todo) => todo.id !== action.payload);
+    },
+    updateTodo(state, action) {
+      state.todos = state.todos.map((todo) =>
+        todo.id === action.payload.id
+          ? { ...todo, ...action.payload.updatedTodo }
+          : todo,
+      );
+    },
+  },
+});
+
+export default todoSlice.reducer;
+
+export const { addTodo, deleteTodo, updateTodo } = todoSlice.actions;
