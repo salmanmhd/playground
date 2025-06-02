@@ -15,23 +15,30 @@
 
 // console.log(a > c);
 
-const a = [
-  {
-    name: "salman",
-    class: 5,
-    id: 2,
-  },
-  {
-    id: 3,
-    name: "rahul",
-    class: 5,
-  },
-];
+// const a = [
+//   {
+//     name: "salman",
+//     class: 5,
+//     id: 2,
+//   },
+//   {
+//     id: 3,
+//     name: "rahul",
+//     class: 5,
+//   },
+// ];
 
-function updateName(id, content) {
-  const result = a.map((el) => (el.id === id ? { ...el, ...content } : el));
-  console.log(result);
-}
+// function updateName(id, content) {
+//   const result = a.map((el) => (el.id === id ? { ...el, ...content } : el));
+//   //   console.log(result);
+// }
 
-const update = { name: "aman" };
-updateName(3, update);
+// const update = { name: "aman" };
+// updateName(3, update);
+
+// const abc = a.find((el) => el.id === 3)?.name;
+// console.log(abc);
+const name = "aamaan rahlul";
+const r = name.slice(2);
+console.log(r);
+const a = [];

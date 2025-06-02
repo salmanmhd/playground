@@ -63,7 +63,7 @@ const initialState = {
       id: "5",
       title: "Call Bank",
       description: "Resolve transaction issue and ask about credit card offer.",
-      list: "Urgent",
+      list: "personal",
       priority: "Urgent",
       date: "2025-04-20",
       tags: ["banking", "finance"],

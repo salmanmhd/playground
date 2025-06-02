@@ -1,0 +1,87 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+body {
+    font-family: 'Lucida Sans', sans-serif;
+}
+
+.navbar {
+    height: 60px;
+    background-color: black;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 30px;
+    padding-right: 50px;
+
+}
+
+
+.navbar p {
+    font-size: 25px;
+    font-weight: 700;
+}
+
+
+
+.main {
+    background-image: url("bg.jpg");
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.7);
+    background-blend-mode: multiply;
+    color: white;
+}
+
+.hero-text {
+    padding-top: 150px;
+    padding-left: 40px;
+}
+
+#title {
+    margin-bottom: 80px;
+    font-size: 50px;
+}
+
+h2 {
+    font-size: 40px;
+}
+
+.btns {
+    margin-top: 140px;
+}
+
+button {
+    background-color: #ffc107;
+    width: 200px;
+    height: 55px;
+    border-radius: 40px;
+    border: none;
+    margin-right: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    font-weight: 600;
+
+}
+
+.pathway {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.pathway-heading {
+    border: 2px solid #8b701d;
+    width: fit-content;
+    padding: 10px;
+    margin-top: 80px;
+
+}

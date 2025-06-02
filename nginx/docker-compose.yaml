@@ -1,0 +1,22 @@
+version: "2"
+services:
+  app1:
+    build: .
+    environment:
+      - "my_app=1"
+    ports:
+      - "3001:3000"
+
+  app2:
+    build: .
+    environment:
+      - "my_app=2"
+    ports:
+      - "3002:3000"
+
+  app3:
+    build: .
+    environment:
+      - "my_app=3"
+    ports:
+      - "3003:3000"

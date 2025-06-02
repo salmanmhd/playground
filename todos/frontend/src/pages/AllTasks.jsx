@@ -1,7 +1,11 @@
 import { ArrowDownWideNarrow, ChevronDown, Funnel, Plus } from "lucide-react";
-import todos from "../data";
 import TodoCard from "../components/TodoCard";
+import { useSelector } from "react-redux";
+import { useState } from "react";
+import AddTodoForm from "../components/AddTodoForm";
 function AllTasks() {
+  const { todos } = useSelector((state) => state.todo);
+  const [isOpenForm, setIsOpenForm] = useState(false);
   return (
     <div className="h-screen bg-gray-50 px-4 pt-8">
       <div className="mb-4 flex justify-between">
@@ -12,7 +16,10 @@ function AllTasks() {
           </span>
         </h1>
         <div className="flex h-8 items-center gap-2">
-          <button className="flex h-8 items-center rounded-md bg-blue-500 px-4 py-2 text-white">
+          <button
+            onClick={() => setIsOpenForm((prev) => !prev)}
+            className="flex h-8 items-center rounded-md bg-blue-500 px-4 py-2 text-white"
+          >
             {<Plus className="mr-2 size-5" />} New Task
           </button>
           <button className="flex h-8 items-center gap-2 rounded-md border border-zinc-300 px-3">
@@ -32,6 +39,7 @@ function AllTasks() {
           <TodoCard todo={todo} key={todo.id} />
         ))}
       </div>
+      {isOpenForm && <AddTodoForm setIsOpen={setIsOpenForm} />}
     </div>
   );
 }

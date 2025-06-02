@@ -1,8 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  list: ["Work", "Personal", "Health"],
-  tags: ["code", "finance", "project"],
+  list: [
+    { id: "1", title: "work" },
+    { id: "2", title: "personal" },
+    { id: "3", title: "health" },
+    { id: "4", title: "habits" },
+  ],
+  tags: [
+    { id: "1", title: "code" },
+    { id: "2", title: "finance" },
+    { id: "3", title: "project" },
+  ],
   priority: ["High", "Medium", "Low", "Urgent"],
 };
 

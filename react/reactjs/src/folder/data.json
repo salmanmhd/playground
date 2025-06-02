@@ -1,0 +1,53 @@
+[
+  {
+    "id": 1,
+    "name": "public",
+    "isFolder": true,
+    "children": [
+      {
+        "id": 2,
+        "name": "app.jsx",
+        "isFolder": false
+      },
+      {
+        "id": 3,
+        "name": "images",
+        "isFolder": true,
+        "children": [
+          {
+            "id": 4,
+            "name": "abc.png",
+            "isFolder": false
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "name": "src",
+    "isFolder": true,
+    "children": [
+      {
+        "id": 6,
+        "name": "index.js",
+        "isFolder": false
+      },
+      {
+        "id": 7,
+        "name": "main.js",
+        "isFolder": false
+      },
+      {
+        "id": 8,
+        "name": "abc.js",
+        "isFolder": false
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "name": "index.css",
+    "isFolder": false
+  }
+]

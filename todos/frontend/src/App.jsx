@@ -4,6 +4,7 @@ import Today from "./pages/Today";
 import Completed from "./pages/Completed";
 import Dashboard from "./pages/Dashboard";
 import Layout from "./components/Layout";
+import ListTodos from "./pages/ListTodos";
 function App() {
   return (
     <BrowserRouter>
@@ -13,6 +14,7 @@ function App() {
           <Route path="/today" element={<Today />} />
           <Route path="/completed" element={<Completed />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/list/:id" element={<ListTodos />} />
         </Route>
       </Routes>
     </BrowserRouter>

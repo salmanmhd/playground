@@ -9,17 +9,19 @@ function TodoCard({ todo }) {
     (completedSubtask / totalSubtask) * 100,
   );
   return (
-    <div className="w-72 cursor-pointer rounded-md border border-zinc-300 bg-white p-3 drop-shadow-md">
+    <div className="w-96 cursor-pointer rounded-md border border-zinc-300 bg-white p-3 drop-shadow-md">
       <div className="flex items-center gap-2">
         <p className={`size-[0.4rem] rounded-full bg-red-500`}></p>
-        <p className="font-semibold">{todo.title}</p>
-        <button className="flex size-5 items-center justify-center rounded-full hover:bg-gray-200">
-          {todo.isCompleted ? (
-            <CircleCheck size={16} className="text-blue-500" />
-          ) : (
-            <Circle size={16} className="hover:text-blue-500" />
-          )}
-        </button>
+        <div className="flex w-full items-center justify-between">
+          <h3 className="font-semibold">{todo.title}</h3>
+          <button className="flex size-5 items-center justify-center rounded-full hover:bg-gray-200">
+            {todo.isCompleted ? (
+              <CircleCheck size={16} className="text-blue-500" />
+            ) : (
+              <Circle size={16} className="text-gray-600 hover:text-blue-500" />
+            )}
+          </button>
+        </div>
       </div>
       <div className="pl-4 text-sm text-zinc-600">
         {todo.subtask.map((task, i) => (

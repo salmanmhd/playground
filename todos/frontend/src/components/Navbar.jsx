@@ -1,6 +1,9 @@
+import { useSelector } from "react-redux";
 import NavItems from "./NavItems";
 import { ChartNoAxesColumn, CircleCheckBig, Inbox, Star } from "lucide-react";
 function Navbar() {
+  const { list } = useSelector((state) => state.category);
+  console.log(list);
   return (
     <>
       <ul className="flex flex-col gap-3 px-4">
@@ -21,6 +24,13 @@ function Navbar() {
         <p className="text-xs font-semibold text-zinc-600">LISTS</p>
         <button className="ml-auto font-semibold text-zinc-600">+</button>
       </div>
+      <ul className="flex flex-col gap-3 px-4">
+        {list.map((list, idx) => (
+          <NavItems text={list.title} path={`/list/${list.id}`} key={idx} />
+        ))}
+        <NavItems text="Work" path="/" icon={<Inbox size={14} />} />
+        <NavItems text="Personal" path="/" icon={<Star size={14} />} />
+      </ul>
     </>
   );
 }
